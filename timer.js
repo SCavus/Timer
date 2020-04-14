@@ -17,13 +17,13 @@ function setAlarm(){
       set = set-1000
       if (set < 10000) {
         let red = setTimeout(function () {
-          time.style.color = 'white'
-          title.style.color = 'white'
-        }, 700)
-        let white= setTimeout(function white () {
           time.style.color = 'red'
           title.style.color = 'red'
         }, 300)
+        let white = setTimeout(function white () {
+          time.style.color = 'white'
+          title.style.color = 'white'
+        }, 600)
         if (set < 0) {
           clearTimeout(red)
           clearTimeout(white)
