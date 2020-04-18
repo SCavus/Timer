@@ -1,4 +1,5 @@
 let reset = document.querySelector('#reset')
+let input = document.querySelector('#alarmSet')
 
 function setAlarm(){
   let inputField = document.querySelector('#alarmSet')
@@ -45,6 +46,13 @@ function setAlarm(){
     clearInterval(countdown)
   }
 }
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("set").click();
+  }
+});
 
 reset.addEventListener('click', ()=>{
   location.reload(true)
