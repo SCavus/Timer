@@ -8,9 +8,6 @@ function setAlarm(){
   let body = document.querySelector('body')
   let set = inputField.value*1000
   let countdown = setInterval(timer, 1000)
-  let setRepeat = document.getElementById("set").addEventListener("click", () => {
-  location.reload()
-  });
 
     function timer() {
       let min = Math.floor((set % (1000 * 60 * 60)) / (1000 * 60));
@@ -40,9 +37,9 @@ function setAlarm(){
         playAlarm(audioEl);
       }
     }
-  if (setRepeat) {
-    location.reload(true)
-  }
+  document.getElementById("set").addEventListener("click", () => {
+    clearInterval(countdown)
+  });
   if (set <= 0 || null) {
     alert('Please enter a value bigger than 0')
     clearInterval(countdown)
