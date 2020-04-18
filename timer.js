@@ -43,6 +43,10 @@ function setAlarm(){
   if (setRepeat) {
     location.reload(true)
   }
+  if (set <= 0 || null) {
+    alert('Please enter a value bigger than 0')
+    clearInterval(countdown)
+  }
 }
 
 reset.addEventListener('click', ()=>{
